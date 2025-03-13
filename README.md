@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛠️ MCP Frontend Starter
 
-## Getting Started
+## Try MCP in VS Code
 
-First, run the development server:
+### MCP Tour
+
+**Prerequisites**
+1. Use VS Code Insiders (version 1.99 or later)
+2. Enable MCP discovery in settings if you want to use your MCP servers defined in Claude Desktop.
+    ```json
+    "chat.mcp.discovery.enabled": true
+    ```
+
+**Configuring MCP servers:**
+1. Check `.vscode/mcp.json` for predefined server configurations.
+   1. `"servers": {}` follows Claude's structure for `claude_desktop_config.json`.
+   2. `"inputs": []` optionally lets you define custom placeholders for the server configurations, to avoid hardcoding sensitive information.
+    ```json
+    {
+        "inputs": [
+            {
+            "type": "promptString",
+            "id": "perplexity-key",
+            "description": "Perplexity API Key"
+            }
+        ],
+        "servers": {
+            // https://github.com/ppl-ai/modelcontextprotocol/
+            "Perplexity": {
+                "command": "docker",
+                "args": [
+                    "run",
+                    "-i",
+                    "--rm",
+                    "-e",
+                    "PERPLEXITY_API_KEY",
+                    "mcp/perplexity-ask"
+                ],
+                "env": {
+                    // Look ma, no hardcoded secrets!
+                    "PERPLEXITY_API_KEY": "${input:perplexity-key}"
+                }
+            }
+        }
+    }
+    ```
+2. Check command `MCP: List Servers` to see all available servers, easy access to start/stop and check the server *Output* for logs.
+
+**MCP tools in Copilot Agent Mode**
+1. Open *Copilot Edits* view in VS Code, set to *Agent*.
+2. Click `🛠️ X` to see enabled MCP tools (should list *Playwright*, *Memory*, *Perplexity*, …)
+   1. Servers/tools can be disabled/enabled
+3. Try
+   1. *"Research with perplexity what the best MCP servers for frontend development are"*
+   2. *"Remember to always update the playwright tests when updating pages or layout"*
+   3. *"Run the app and check the design with playwright"*
+
+### Things to try
+
+
+
+## Development
+
+Use DevContainer in VS Code for development. This will set up a local environment with all the necessary dependencies.
+
+Or run locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

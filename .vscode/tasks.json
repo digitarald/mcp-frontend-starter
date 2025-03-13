@@ -10,52 +10,11 @@
       "presentation": {
         "reveal": "always",
         "panel": "dedicated"
-      }
-    },
-    {
-      "label": "Next: Build for Production",
-      "type": "npm",
-      "script": "build",
+      },
       "group": {
         "kind": "build",
         "isDefault": true
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Next: Start Production Server",
-      "type": "npm",
-      "script": "start",
-      "problemMatcher": [],
-      "isBackground": true
-    },
-    {
-      "label": "Lint Code",
-      "type": "npm",
-      "script": "lint",
-      "problemMatcher": ["$eslint-stylish"]
-    },
-    {
-      "label": "Run E2E Tests",
-      "type": "npm",
-      "script": "test:e2e",
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Run E2E Tests with UI",
-      "type": "npm",
-      "script": "test:e2e:ui",
-      "problemMatcher": []
-    },
-    {
-      "label": "Show E2E Test Report",
-      "type": "npm",
-      "script": "test:e2e:report",
-      "problemMatcher": []
+      }
     }
   ]
 }

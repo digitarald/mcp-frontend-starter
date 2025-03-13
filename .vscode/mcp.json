@@ -6,36 +6,31 @@
       "description": "Perplexity API Key"
     }
   ],
-    "servers": {
-      "Playwright": {
-        "command": "npx",
-        "args": [
-          "@executeautomation/playwright-mcp-server"
-        ]
-      },
-      "Knolwdge Memory": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@modelcontextprotocol/server-memory"
-        ],
-        "env": {
-          "MEMORY_FILE_PATH": "${workspaceFolder}/.vscode/memory.json"
-        }
-      },
-      "Perplexity": {
-        "command": "docker",
-        "args": [
-          "run",
-          "-i",
-          "--rm",
-          "-e",
-          "PERPLEXITY_API_KEY",
-          "mcp/perplexity-ask"
-        ],
-        "env": {
-          "PERPLEXITY_API_KEY": "${input:perplexity-key}"
-        }
+  "servers": {
+    "Playwright": {
+      "command": "npx",
+      "args": ["@executeautomation/playwright-mcp-server"]
+    },
+    "Memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": "${workspaceFolder}/.vscode/memory.json"
+      }
+    },
+    "Perplexity": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "PERPLEXITY_API_KEY",
+        "mcp/perplexity-ask"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "${input:perplexity-key}"
       }
     }
   }
+}

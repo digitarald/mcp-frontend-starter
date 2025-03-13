@@ -53,12 +53,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-2">What is MCP?</h2>
           <p className="text-gray-600 dark:text-gray-300">
             The Model Context Protocol is revolutionizing how AI models interact with external data sources and tools, 
-            offering a standardized framework for seamless connectivity. In this program, you'll master the ins and 
+            offering a standardized framework for seamless connectivity. In this program, you&apos;ll master the ins and 
             outs of MCP, learning how to create AI applications that can dynamically access real-time information, 
             perform actions, and leverage specialized tools.
           </p>
           <p className="text-gray-600 dark:text-gray-300">
-            You'll gain hands-on experience with MCP's client-server architecture, explore pre-built servers, and learn 
+            You&apos;ll gain hands-on experience with MCP&apos;s client-server architecture, explore pre-built servers, and learn 
             to develop custom integrations.
           </p>
         </section>
@@ -145,7 +145,7 @@ export default function Home() {
           <div className="flex flex-col items-center text-center gap-4">
             <h2 className="text-2xl font-bold">Ready to become an MCP expert?</h2>
             <p className="max-w-md text-gray-600 dark:text-gray-300">
-              By the end of the course, you'll be equipped to build scalable, context-aware AI solutions 
+              By the end of the course, you&apos;ll be equipped to build scalable, context-aware AI solutions 
               that can effortlessly connect to databases, APIs, and tools.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 mt-4 w-full max-w-md">
