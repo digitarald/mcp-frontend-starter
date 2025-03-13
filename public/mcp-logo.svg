@@ -1,0 +1,27 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: system-ui, sans-serif; font-weight: bold; }
+    .main-text { font-size: 24px; }
+    .sub-text { font-size: 10px; letter-spacing: 1px; }
+    @media (prefers-color-scheme: dark) {
+      .logo-text { fill: #ffffff; }
+      .logo-accent { fill: #60a5fa; }
+    }
+    @media (prefers-color-scheme: light) {
+      .logo-text { fill: #171717; }
+      .logo-accent { fill: #2563eb; }
+    }
+  </style>
+  
+  <!-- Main logo -->
+  <g transform="translate(0, 24)">
+    <text class="text main-text logo-text" x="0" y="0">MCP</text>
+    <text class="text sub-text logo-accent" x="60" y="0">TRAINING</text>
+  </g>
+  
+  <!-- Icon element -->
+  <g transform="translate(90, 20)">
+    <circle cx="10" cy="0" r="8" fill="none" stroke-width="2" class="logo-accent" stroke-dasharray="18" stroke-dashoffset="0" />
+    <path d="M6,-4 L14,4 M6,4 L14,-4" stroke-width="2" class="logo-accent" />
+  </g>
+</svg>

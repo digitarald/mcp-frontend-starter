@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+.next
+.vscode
+.devcontainer
+.github
+README.md
+e2e/test-results
+e2e/playwright-report

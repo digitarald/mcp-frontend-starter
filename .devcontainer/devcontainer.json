@@ -1,0 +1,34 @@
+{
+	"name": "Next.js Frontend",
+	"dockerFile": "Dockerfile",
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js App",
+			"onAutoForward": "openPreview"
+		}
+	},
+	"postCreateCommand": "npm install",
+	"postStartCommand": "npm run dev",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"ms-playwright.playwright",
+				"bradlc.vscode-tailwindcss",
+				"csstools.postcss",
+				"ms-azuretools.vscode-docker",
+				"GitHub.copilot"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"typescript.tsdk": "node_modules/typescript/lib",
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": true
+				}
+			}
+		}
+	}
+}
