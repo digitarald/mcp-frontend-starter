@@ -1,6 +1,6 @@
 # 🛠️ MCP Frontend Starter
 
-Explainer, playground and starter for using MCP[1] servers in VS Code with [GitHub Copilot's Agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode), focusing on frontend development for maximum "vibing"[2].
+Explainer, playground and starter for using MCP[^1] servers in VS Code with [GitHub Copilot's Agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode), focusing on frontend development for maximum "vibing"[^2].
 
 ## Extend GitHub Copilot with MCP server tools
 
@@ -89,5 +89,5 @@ npm install
 npm run dev
 ```
 
-[1]: https://modelcontextprotocol.io/introduction
-[2]: https://en.wikipedia.org/wiki/Vibe_coding
+[^1]: https://modelcontextprotocol.io/introduction
+[^2]: https://en.wikipedia.org/wiki/Vibe_coding
