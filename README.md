@@ -1,22 +1,22 @@
-# 🛠️ MCP Frontend Starter
+# 🚀 MCP Frontend Starter
 
-Explainer, playground and starter for using MCP[^1] servers in VS Code with [GitHub Copilot's Agent](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode), focusing on frontend development for maximum "vibing"[^2].
+A comprehensive toolkit, playground, and starter for integrating MCP[^1] servers with GitHub Copilot's Agent in VS Code. Designed specifically for frontend developers to achieve maximum "vibing"[^2] in their workflow.
 
-## Extend GitHub Copilot with MCP server tools
+## ✨ Supercharge GitHub Copilot with MCP Server Tools
 
-MCP support just landed in VS Code Insiders (v1.99) as preview feature, ready to be used with GitHub Copilot's Agent mode (see [open issues](https://github.com/microsoft/vscode/issues?q=is%3Aissue%20state%3Aopen%20MCP%20label%3Achat-mcp)). This allows you to use any MCP server in your agentic coding workflow.
+MCP support has just landed in VS Code Insiders (v1.99) as a preview feature, ready to enhance GitHub Copilot's Agent mode (see [open issues](https://github.com/microsoft/vscode/issues?q=is%3Aissue%20state%3Aopen%20MCP%20label%3Achat-mcp)). This integration lets you leverage any MCP server directly in your agentic coding workflow.
 
-⚠️ This is a preview feature and may change in the future. Use at your own risk, but especially for fun and exploration! [File issues](https://github.com/microsoft/vscode/issues?q=is%3Aissue%20state%3Aopen%20MCP%20label%3Achat-mcp) if you find bugs or have suggestions.
+⚠️ This is an early preview feature that may evolve. Use it for exploration and fun! Found a bug or have ideas? [File issues here](https://github.com/microsoft/vscode/issues?q=is%3Aissue%20state%3Aopen%20MCP%20label%3Achat-mcp).
 
-### Getting Started with MCP
+## 🏁 Getting Started with MCP
 
-**Prerequisite**: Use VS Code Insiders (version 1.99 or later) with GitHub Copilot pre-release.
+**Prerequisite**: VS Code Insiders (version 1.99 or later) with GitHub Copilot pre-release installed.
 
-#### 1. Configure your MCP servers
+### 1. Configure Your MCP Servers
 
-1. Configure servers in `.vscode/mcp.json` to share with other developers working on the same project.
-   1. `"servers": {}` follows Claude's structure for `claude_desktop_config.json`.
-   2. `"inputs": []` optionally lets you define custom placeholders for the server configurations, to avoid hardcoding sensitive information.
+1. Set up servers in `.vscode/mcp.json` to share configurations with project collaborators:
+   - `"servers": {}` follows Claude's structure for `claude_desktop_config.json`
+   - `"inputs": []` lets you define custom placeholders for configurations, avoiding hardcoded secrets
     ```jsonc
     // Example .vscode/mcp.json
     {
@@ -50,39 +50,39 @@ MCP support just landed in VS Code Insiders (v1.99) as preview feature, ready to
         }
     }
     ```
-2. Alternatively, configure `"mcp": {…}` to your VS Code settings to customize your personal MCP server list.
-3. Enable MCP discovery in VS Code settings if you want to use your existing MCP entries from Claude Desktop.
+2. Alternatively, configure `"mcp": {…}` in your VS Code settings for a personalized MCP server list
+3. Enable MCP discovery to use your existing entries from Claude Desktop:
     ```json
     "chat.mcp.discovery.enabled": true
     ```
-4. Check command `MCP: List Servers` to see all available servers, easy access to start/stop and check the server *Output* for logs.
+4. Run `MCP: List Servers` to see all available servers, manage them, and check logs in the *Output* panel
 
-#### 2. Power up Copilot Agent Mode with MCP server tools
+### 2. Unleash Copilot Agent Mode with MCP Tools
 
-1. Open *Copilot Edits* view in VS Code, set to *Agent* mode.
-2. Click the `🛠️` tools button to list enabled MCP tools (should list *Playwright*, *Memory*, *Perplexity*, …)
-   1. Servers/tools can be disabled/enabled
-3. Try these prompts in agent mode:
-   1. *"Research with perplexity what the best MCP servers for frontend development are"*
-   2. *"Use the playwright tool to check that the waitlist input does email validation"*
-   3. *"Change the design to a dark-only mode, and do a visual review with playwright"*
+1. Open *Copilot Edits* view in VS Code and switch to *Agent* mode
+2. Click the `🛠️` tools button to see enabled MCP tools (*Playwright*, *Memory*, *Perplexity*, etc.)
+   - Toggle servers/tools on or off as needed
+3. Try these powerful prompts:
+   - *"Research with perplexity what the best MCP servers for frontend development are"*
+   - *"Use the playwright tool to check that the waitlist input does email validation"*
+   - *"Change the design to a dark-only mode, and do a visual review with playwright"*
 
-**Done!** It's that easy. But it's really just the beginning, as you will realize that *ANYTHING IN YOUR DEVELOPER TOOLBOX COULD BE AN MCP SERVER THAT PROVIDES TOOLS FOR GITHUB COPILOT*. 🤯 Right?
+**That's it!** You're ready to go. But this is just the beginning—**ANY DEVELOPER TOOL CAN BECOME AN MCP SERVER FOR GITHUB COPILOT**. 🤯 The possibilities are endless.
 
-### Next Steps
+## 🔍 Next Steps
 
-Things to try out:
+Try these to expand your MCP capabilities:
 
-- Add more MCP servers to `.vscode/mcp.json` from https://github.com/modelcontextprotocol/servers
-- Enable/disable servers in the *Copilot Edits* view based on your task
-- Use `.github/copilot-instructions.md` to fine-tune when and how tools are used
-- Write your own MCP server in TypeScript, Python, or any other language
+- Add more MCP servers from [the official repository](https://github.com/modelcontextprotocol/servers)
+- Customize which tools are active based on your current task
+- Fine-tune tool usage with `.github/copilot-instructions.md`
+- Create your own MCP server in TypeScript, Python, or any language you prefer
 
-## Developing in this Starter
+## 🛠️ Development Setup
 
-Easiest: Use *DevContainer* in VS Code for development. This will set up a local environment with all the necessary dependencies.
+**Easiest option:** Use *DevContainer* in VS Code for a ready-to-go environment with all dependencies.
 
-Or run locally:
+**Local setup:**
 
 ```bash
 npm install
