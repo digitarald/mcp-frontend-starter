@@ -10,11 +10,13 @@ MCP support has just landed in VS Code Insiders (v1.99) as a preview feature, re
 
 ## 🏁 Getting Started with MCP
 
-**Prerequisite**: VS Code Insiders (version 1.99 or later) with GitHub Copilot pre-release installed.
+**Prerequisite**: VS Code Insiders (version 1.99 or later) with GitHub Copilot pre-release installed. (👋 Welcome to our early adopter audience!)
 
-### 1. Configure Your MCP Servers
+### 1. A tour of MCP Servers configurations
 
-1. Set up servers in `.vscode/mcp.json` to share configurations with project collaborators:
+Already set up, but feel to edit and add:
+
+1. Servers in `.vscode/mcp.json` are shared as configurations with all repo collaborators:
    - `"servers": {}` follows Claude's structure for `claude_desktop_config.json`
    - `"inputs": []` lets you define custom placeholders for configurations, avoiding hardcoded secrets
     ```jsonc
@@ -26,10 +28,11 @@ MCP support has just landed in VS Code Insiders (v1.99) as a preview feature, re
             {
             "type": "promptString",
             "id": "perplexity-key",
+            "password": true, // Encrypted at-rest
             "description": "Perplexity API Key"
             }
         ],
-        // Note, not "mcpServers"
+        //
         "servers": {
             // https://github.com/ppl-ai/modelcontextprotocol/
             "Perplexity": {
@@ -50,21 +53,18 @@ MCP support has just landed in VS Code Insiders (v1.99) as a preview feature, re
         }
     }
     ```
-2. Alternatively, configure `"mcp": {…}` in your VS Code settings for a personalized MCP server list
-3. Enable MCP discovery to use your existing entries from Claude Desktop:
-    ```json
-    "chat.mcp.discovery.enabled": true
-    ```
+2. Alternatively, configure `"mcp": {…}` in your VS Code settings for a personalized MCP server list which follows you with with Settings Sync.
+3. Enable MCP discovery (`"chat.mcp.discovery.enabled": true`) to use your existing entries from Claude Desktop and other MCP clients. VS Code will show a trust dialog before enabling those servers:
 4. Run `MCP: List Servers` to see all available servers, manage them, and check logs in the *Output* panel
 
 ### 2. Unleash Copilot Agent Mode with MCP Tools
 
-1. Open *Copilot Edits* view in VS Code and switch to *Agent* mode
-2. Click the `🛠️` tools button to see enabled MCP tools (*Playwright*, *Memory*, *Perplexity*, etc.)
+1. Open *Copilot* view in VS Code and switch to *Agent* mode
+2. Click the `🛠️` tools button to see enabled MCP tools (*Playwright*, *Memory*, and *Perplexity* for this repo)
    - Toggle servers/tools on or off as needed
-3. Try these powerful prompts:
-   - *"Research with perplexity what the best MCP servers for frontend development are"*
-   - *"Use the playwright tool to check that the waitlist input does email validation"*
+3. Try these prompts that will use tools:
+   - *"Research with perplexity what the best MCP servers for frontend development are and create a splashy listing page"*
+   - *"Use the playwright tool to check the landing page and fix any ayout bugs"*
    - *"Change the design to a dark-only mode, and do a visual review with playwright"*
 
 **That's it!** You're ready to go. But this is just the beginning—**ANY DEVELOPER TOOL CAN BECOME AN MCP SERVER FOR GITHUB COPILOT**. 🤯 The possibilities are endless.
